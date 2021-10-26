@@ -1,0 +1,61 @@
+<%- include ../partials/header.ejs %>
+
+<!-- Content for the Add_Edit page -->
+<div class="container">
+    <div class="row">
+        <div class="offset-md-3 col-md-4">
+            <h1><%= title %></h1>
+
+            <form class="form" method="POST">
+                <div class="form-group">
+                    <input type="hidden"
+                        name="id"
+                        value="<%= item._id %>"
+                    >
+                    <label for="itemTextField">Contact Name</label>
+                    <input type="text" class="form-control"
+                        id="itemTextField"
+                        placeholder="Enter the contact name"
+                        name="item" 
+                        value="<%= item.item %>"
+                        required>
+                </div>
+                <br />
+                <div class="form-group">
+                    <label for="QtyTextField">Contact Number</label>
+                    <input type="number" class="form-control"
+                    id="QtyTextField"
+                    placeholder="647XXXXXXX format please"
+                    name="qty" 
+                    value="<%= item.qty %>"
+                    required>
+                </div>
+                <br />
+                <div class="form-group">
+                    <label for="statusTextField">Contact Email</label>
+                    <input type="text" class="form-control"
+                    id="statusTextField"
+                    placeholder="Enter the contact email"
+                    name="status" 
+                    value="<%= item.status %>"
+                    >
+                </div>
+                <br/>
+
+                <button class="btn btn-primary" type="submit">
+                    <i class="fas fa-edit"></i> 
+                    Submit
+                </button>
+                
+                <a href="/inventory/list" class="btn btn-warning">
+                    <i class="fas fa-undo"></i> 
+                    Cancel
+                </a>
+
+            </form>
+        </div>
+
+    </div>
+</div>
+
+<%- include ../partials/footer.ejs %>
